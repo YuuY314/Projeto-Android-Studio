@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="200dp"
-                android:text="Chamado Técnico"
+                android:text="Cadastro"
                 android:textSize="30dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -43,39 +43,21 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/ilEquipamento"
+                android:id="@+id/ilNome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:hint="Equipamento"
+                android:hint="Nome"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/titulo"
-                app:placeholderText="Notebook Dell">
+                app:placeholderText="João Pedro">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtEquipamento"
+                    android:id="@+id/edtNome"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="text" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/ilPatrimonio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:hint="N° do patrimônio"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ilEquipamento"
-                app:placeholderText="1548">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtPatrimonio"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -83,28 +65,46 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:hint="E-mail para retorno"
+                android:hint="E-mail"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ilPatrimonio"
-                app:placeholderText="usuario@empresa.com">
+                app:layout_constraintTop_toBottomOf="@+id/ilNome"
+                app:placeholderText="1548">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ilSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Senha"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ilEmail"
+                app:placeholderText="usuario@empresa.com">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtSenha"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/btnAbrirChamado"
+                android:id="@+id/btnCadastrar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Abrir Chamado"
+                android:text="Cadastrar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ilEmail"
+                app:layout_constraintTop_toBottomOf="@+id/ilSenha"
 
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
