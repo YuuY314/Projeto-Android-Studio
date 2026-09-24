@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -17,15 +15,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.appbar.MaterialToolbar;
 
-public class SobreActivity extends AppCompatActivity {
-
-    private Button btnEnviarMensagem;
+public class ConfigActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_sobre);
+        setContentView(R.layout.activity_config);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -35,20 +31,9 @@ public class SobreActivity extends AppCompatActivity {
         MaterialToolbar toolbar = findViewById(R.id.toolbarTop);
         setSupportActionBar(toolbar);
 
-        btnEnviarMensagem = findViewById(R.id.btnEnviarMensagem);
-
         if(getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-
-        btnEnviarMensagem.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public  void onClick(View v){
-                Toast.makeText(SobreActivity.this, "Mensagem enviada com sucesso!", Toast.LENGTH_LONG).show();
-
-                finish();
-            }
-        });
     }
 
     public boolean onSupportNavigateUp(){
@@ -65,19 +50,19 @@ public class SobreActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
         if(item.getItemId() == R.id.menu_main){
-            Intent intent = new Intent(SobreActivity.this, MainActivity.class);
+            Intent intent = new Intent(ConfigActivity.this, MainActivity.class);
             startActivity(intent);
             return true;
         }
 
-        if(item.getItemId() == R.id.menu_config){
-            Intent intent = new Intent(SobreActivity.this, ConfigActivity.class);
+        if(item.getItemId() == R.id.menu_sobre){
+            Intent intent = new Intent(ConfigActivity.this, SobreActivity.class);
             startActivity(intent);
             return true;
         }
 
         if(item.getItemId() == R.id.menu_cadastro){
-            Intent intent = new Intent(SobreActivity.this, CadastroActivity.class);
+            Intent intent = new Intent(ConfigActivity.this, CadastroActivity.class);
             startActivity(intent);
             return true;
         }
