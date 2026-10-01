@@ -14,8 +14,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -39,48 +41,52 @@ public class MainActivity extends AppCompatActivity {
         MaterialToolbar toolbar = findViewById(R.id.toolbarTop);
         setSupportActionBar(toolbar);
 
-        ilEquipamento = findViewById(R.id.ilEquipamento);
-        ilPatrimonio = findViewById(R.id.ilPatrimonio);
-        ilEmail = findViewById(R.id.ilEmail);
-        edtEquipamento = findViewById(R.id.edtEquipamento);
-        edtPatrimonio = findViewById(R.id.edtPatrimonio);
-        edtEmail = findViewById(R.id.edtEmail);
-        btnAbrirChamado = findViewById(R.id.btnAbrirChamado);
+        BottomNavigationView bottomNav = findViewById(R.id.bottomNav);
 
-        btnAbrirChamado.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public  void onClick(View v){
-                String equipamento = edtEquipamento.getText().toString().trim();
-                String patrimonio = edtPatrimonio.getText().toString().trim();
-                String email = edtEmail.getText().toString().trim();
-
-                ilEquipamento.setError(null);
-                ilPatrimonio.setError(null);
-                ilEmail.setError(null);
-
-                if(equipamento.isEmpty()){
-                    ilEquipamento.setError("Informe o equipamento");
-                    return;
-                }
-
-                if(patrimonio.isEmpty()){
-                    ilPatrimonio.setError("Informe o número do patrimônio");
-                    return;
-                }
-
-                if(patrimonio.length() < 4){
-                    ilPatrimonio.setError("Patrimônio deve possuir pelo menos 4 dígitos");
-                    return;
-                }
-
-                if(!email.contains("@")){
-                    ilEmail.setError("Email inválido");
-                    return;
-                }
-
-                Toast.makeText(MainActivity.this, "Chamado aberto com sucesso!", Toast.LENGTH_LONG).show();
-            }
-        });
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host);
+//
+//        ilEquipamento = findViewById(R.id.ilEquipamento);
+//        ilPatrimonio = findViewById(R.id.ilPatrimonio);
+//        ilEmail = findViewById(R.id.ilEmail);
+//        edtEquipamento = findViewById(R.id.edtEquipamento);
+//        edtPatrimonio = findViewById(R.id.edtPatrimonio);
+//        edtEmail = findViewById(R.id.edtEmail);
+//        btnAbrirChamado = findViewById(R.id.btnAbrirChamado);
+//
+//        btnAbrirChamado.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public  void onClick(View v){
+//                String equipamento = edtEquipamento.getText().toString().trim();
+//                String patrimonio = edtPatrimonio.getText().toString().trim();
+//                String email = edtEmail.getText().toString().trim();
+//
+//                ilEquipamento.setError(null);
+//                ilPatrimonio.setError(null);
+//                ilEmail.setError(null);
+//
+//                if(equipamento.isEmpty()){
+//                    ilEquipamento.setError("Informe o equipamento");
+//                    return;
+//                }
+//
+//                if(patrimonio.isEmpty()){
+//                    ilPatrimonio.setError("Informe o número do patrimônio");
+//                    return;
+//                }
+//
+//                if(patrimonio.length() < 4){
+//                    ilPatrimonio.setError("Patrimônio deve possuir pelo menos 4 dígitos");
+//                    return;
+//                }
+//
+//                if(!email.contains("@")){
+//                    ilEmail.setError("Email inválido");
+//                    return;
+//                }
+//
+//                Toast.makeText(MainActivity.this, "Chamado aberto com sucesso!", Toast.LENGTH_LONG).show();
+//            }
+//        });
     }
 
     @Override
